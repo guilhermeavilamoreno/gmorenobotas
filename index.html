@@ -213,13 +213,16 @@
         color: #2b1b13;
     }
 
+    /* Atualização para produtos-grid */
     .produtos-grid {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: stretch; /* Alinha cards com altura igual */
         gap: 25px;
     }
 
+    /* Atualização para produto-card */
     .produto-card {
         background: #4b3a32;
         padding: 20px;
@@ -232,7 +235,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 420px;
+        height: 420px; /* fixa a altura para alinhar os botões */
         transition: transform 0.3s ease;
     }
 
@@ -268,6 +271,7 @@
         font-size: 18px;
     }
 
+    /* Aqui está a principal correção: */
     .produto-card button {
         background: linear-gradient(135deg, #d09e63 0%, #f0c287 100%);
         color: #2b1b13;
@@ -280,6 +284,7 @@
         box-shadow: 0 4px 8px rgba(208, 158, 99, 0.6);
         transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
         user-select: none;
+        margin-top: auto; /* faz o botão subir para o fim do container */
     }
 
     .produto-card button:hover,
@@ -366,6 +371,9 @@
 
         .menu-hamburguer {
             display: flex;
+            position: absolute;
+            top: 20px;
+            right: 30px;
         }
 
         .produtos-grid {
@@ -375,7 +383,9 @@
 
         .produto-card {
             width: 100%;
-            height: 100%;
+            height: auto; /* no mobile pode ser auto para flexibilidade */
+            max-width: none;
+            margin-bottom: 20px;
         }
 
         .carrossel {
@@ -402,6 +412,7 @@
         }
     }
 </style>
+
 </head>
 <body>
     <header>
@@ -549,7 +560,7 @@
                     />
                     <h3>Bota Onda7</h3>
                     <p>
-                        Bota ideal para andar de moto, com proteção para troca de
+                        Ideal para moto, com proteção para troca de
                         marcha.
                     </p>
                     <p class="preco">R$ 89,00</p>
@@ -577,12 +588,12 @@
                     aria-label="Produto Cinto de Couro, preço 49 reais"
                 >
                     <img
-                        src="imagens/cinto-couro.png"
+                        src="imagens/cinto-couro-preto.png"
                         alt="Cinto de couro legítimo, estilo clássico"
                     />
                     <h3>Cinto de Couro</h3>
                     <p>Cinto clássico em couro legítimo, resistente e estiloso.</p>
-                    <p class="preco">R$ 49,00</p>
+                    <p class="preco">R$ 34,00</p>
                     <button
                         onclick="window.open('https://encurtador.com.br/a7TxM', '_blank')"
                         aria-label="Comprar Cinto de Couro agora"
@@ -597,7 +608,7 @@
                     aria-label="Produto Carteira Masculina, preço 59 reais"
                 >
                     <img
-                        src="imagens/carteira-masculina.png"
+                        src="imagens/carteira-paris.png"
                         alt="Carteira masculina em couro com vários compartimentos"
                     />
                     <h3>Carteira Masculina</h3>
@@ -605,7 +616,7 @@
                         Carteira em couro com diversos compartimentos para cartões e
                         dinheiro.
                     </p>
-                    <p class="preco">R$ 59,00</p>
+                    <p class="preco">R$ 39,00</p>
                     <button
                         onclick="window.open('https://encurtador.com.br/a7TxM', '_blank')"
                         aria-label="Comprar Carteira Masculina agora"
